@@ -13,6 +13,11 @@ class LifeCycleTestController extends Controller
         $sample->run();
         dd(app());
     }
+
+    public function showServiceProviderTest() {
+        $sample = app()->make('serviceProviderTest');
+        dd($sample);
+    }
 }
 
 class Sample
