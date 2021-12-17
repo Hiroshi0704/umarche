@@ -3,6 +3,7 @@
         header2
     </x-slot>
     component-test2
-
-    <x-tests.card title="タイトル" content="本文" :message="$message" />
+    <x-test-class-base classBaseMessage="メッセージです。" />
+    <div class="mb-4"></div>
+    <x-test-class-base classBaseMessage="メッセージです。" defaultMessage="変更された初期値" />
 </x-tests.app>
