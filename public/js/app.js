@@ -5545,6 +5545,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
+window.deletePost = function (e) {
+  if (confirm('本当に削除してもいいですか？')) {
+    return true;
+  }
+
+  return false;
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
