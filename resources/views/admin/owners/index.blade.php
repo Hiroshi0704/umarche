@@ -11,14 +11,14 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- エロクアント
                     @foreach ($e_all as $e_owner)
-                        {{ $e_owner->name }}
-                        {{ $e_owner->created_at->diffForHumans() }}
+                    {{ $e_owner->name }}
+                    {{ $e_owner->created_at->diffForHumans() }}
                     @endforeach
                     <br>
                     クエリビルダ
                     @foreach ($q_get as $q_owner)
-                        {{ $q_owner->name }}
-                        {{ Carbon\Carbon::parse($q_owner->created_at)->diffForHumans() }}
+                    {{ $q_owner->name }}
+                    {{ Carbon\Carbon::parse($q_owner->created_at)->diffForHumans() }}
                     @endforeach --}}
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 mx-auto">
@@ -62,11 +62,12 @@
                                                         class="text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-500 rounded text-lg">編集</button>
                                                 </td>
                                                 <td class="px-4 py-3">
-                                                    <form action="{{ route('admin.owners.destroy', ['owner' => $owner->id]) }}" method="post" onsubmit="return deletePost(this)">
+                                                    <form
+                                                        action="{{ route('admin.owners.destroy', ['owner' => $owner->id]) }}"
+                                                        method="post" onsubmit="return deletePost(this)">
                                                         @method('delete')
                                                         @csrf
-                                                        <button
-                                                            type="submit"
+                                                        <button type="submit"
                                                             class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded text-lg">削除</button>
                                                     </form>
                                                 </td>

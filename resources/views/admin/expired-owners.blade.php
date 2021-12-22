@@ -38,10 +38,11 @@
                                                 <td class="px-4 py-3">{{ $owner->deleted_at->diffForHumans() }}
                                                 </td>
                                                 <td class="px-4 py-3">
-                                                    <form action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id]) }}" method="post" onsubmit="return deletePost(this)">
+                                                    <form
+                                                        action="{{ route('admin.expired-owners.destroy', ['owner' => $owner->id]) }}"
+                                                        method="post" onsubmit="return deletePost(this)">
                                                         @csrf
-                                                        <button
-                                                            type="submit"
+                                                        <button type="submit"
                                                             class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded text-lg">完全に削除</button>
                                                     </form>
                                                 </td>
