@@ -39,6 +39,15 @@
                             </div>
                         </div>
                     </form>
+                    <form action="{{ route('owner.images.destroy', ['image' => $image->id]) }}" method="post"
+                        onsubmit="return deletePost(this)">
+                        @method('delete')
+                        @csrf
+                        <div class="p-2 w-full mt-32 flex justify-around">
+                            <button type="submit"
+                                class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded text-lg">削除する</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
