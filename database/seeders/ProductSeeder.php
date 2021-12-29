@@ -23,11 +23,6 @@ class ProductSeeder extends Seeder
             [
                 'shop_id' => 1,
                 'secondary_category_id' => 2,
-                'image1' => 1,
-            ],
-            [
-                'shop_id' => 1,
-                'secondary_category_id' => 3,
                 'image1' => 2,
             ],
             [
@@ -36,9 +31,14 @@ class ProductSeeder extends Seeder
                 'image1' => 3,
             ],
             [
+                'shop_id' => 1,
+                'secondary_category_id' => 3,
+                'image1' => 4,
+            ],
+            [
                 'shop_id' => 2,
                 'secondary_category_id' => 1,
-                'image1' => 1,
+                'image1' => 5,
             ],
         ]);
     }

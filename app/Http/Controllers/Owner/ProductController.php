@@ -3,10 +3,29 @@
 namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\Shop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:owners');
+        $this->middleware(function (Request $request, $next) {
+            $id = $request->route('product');
+            if (!is_null($id)) {
+                $ownerId = Product::findOrFail($id)->shop->owner_id;
+                if ($ownerId !== Auth::id()) {
+                    abort(404);
+                }
+            }
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +33,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Shop::with('products.firstImage')
+            ->where('owner_id', Auth::id())
+            ->firstOrFail()
+            ->products;
+
+        return view('owner.products.index', compact('products'));
     }
 
     /**
