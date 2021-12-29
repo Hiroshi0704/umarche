@@ -20,4 +20,8 @@ class Product extends Model
     public function firstImage() {
         return $this->belongsTo(Image::class, 'image1', 'id');
     }
+
+    public function stocks() {
+        return $this->hasMany(Stock::class);
+    }
 }

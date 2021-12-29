@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             PrimaryCategorySeeder::class,
             SecondaryCategorySeeder::class,
             ProductSeeder::class,
+            StockSeeder::class,
         ]);
     }
 }
